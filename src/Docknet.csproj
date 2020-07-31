@@ -6,6 +6,11 @@
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>docknet</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/bduman/docknet.git</RepositoryUrl> 
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>docker;pull;image</PackageTags>
+    <PackageDescription>Pull docker image without docker installation</PackageDescription>
   </PropertyGroup>
 
   <ItemGroup>

@@ -23,3 +23,5 @@ obj/
 .history
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,dotnetcore
+
+src/nupkg/*
