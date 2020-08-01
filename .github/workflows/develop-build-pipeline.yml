@@ -1,21 +1,13 @@
-name: Master Release Pipeline
-
-env:
-  NUGET_FEED: https://api.nuget.org/v3/index.json
-  NUGET_KEY: ${{ secrets.NUGET_KEY }}
+name: Develop Build Pipeline
     
 on:
   push:
-    branches: [ master ]
-    paths:
-      - './src/**'
+    branches: [ develop ]
   pull_request:
-    branches: [ master ]
-    paths:
-      - './src/**'
+    branches: [ develop ]
 
 jobs:
-  build-test-pack-push:
+  build-test:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -34,7 +26,3 @@ jobs:
       run: |
         cd ../../tests/Docknet.Tests/
         dotnet test --verbosity normal
-    - name: Pack
-      run:  dotnet pack -v normal -c Release --no-build --no-restore -p:PackageVersion=$GITHUB_RUN_ID
-    - name: Nuget Push
-      run:  dotnet nuget push ./nupkg/Docknet*.nupkg --source $NUGET_FEED --skip-duplicate --api-key $NUGET_KEY
