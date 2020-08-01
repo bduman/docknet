@@ -15,8 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./src
-    
+        working-directory: ./src/Docknet/
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -29,8 +28,8 @@ jobs:
       run:  dotnet build --configuration Release --no-restore
     - name: Test
       run: |
-        cd ../tests
-        dotnet test --no-restore --no-build --verbosity normal
+        cd ../../tests/Docknet.Tests/
+        dotnet test --verbosity normal
     - name: Pack
       run:  dotnet pack -v normal -c Release --no-build --no-restore -p:PackageVersion=$GITHUB_RUN_ID
     - name: Nuget Push
