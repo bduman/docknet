@@ -6,6 +6,22 @@ Pull docker image without docker installation - dotnet tool
 `dotnet tool install --global Docknet`
 
 # Usage
+
+```
+$ docknet -h
+
+Usage: Docknet [command] [options]
+
+Options:
+  --version     Show version information
+  -?|-h|--help  Show help information
+
+Commands:
+  pull          Pull an image or a repository from a registry
+
+Run 'Docknet [command] -?|-h|--help' for more information about a command.
+```
+
 Download image with this command.
 
 `docknet pull ubuntu`
