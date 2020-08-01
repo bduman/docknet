@@ -1,4 +1,4 @@
-# docknet
+# Docknet ![Nuget](https://img.shields.io/nuget/v/docknet)
 Pull docker image without docker installation - dotnet tool
 
 # Installation
