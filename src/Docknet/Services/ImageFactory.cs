@@ -52,7 +52,7 @@ namespace Docknet.Services
             }
 
             image.RepositoryTag = image.Repository != "library"
-                   ? string.Format("{0}/{1}:{2}", image.Repository, image.Name, image.Tag)
+                   ? string.Format("{0}/{1}:{2}", string.Join("/", expressionParts.SkipLast(1)), image.Name, image.Tag)
                    : string.Format("{0}:{1}", image.Name, image.Tag);
 
             await this.ResolveAuthAsync(image);
