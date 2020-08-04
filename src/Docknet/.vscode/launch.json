@@ -14,7 +14,6 @@
             "args": [
                 "pull",
                 "ubuntu"
-                //"mcr.microsoft.com/mssql-tools"
             ],
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
