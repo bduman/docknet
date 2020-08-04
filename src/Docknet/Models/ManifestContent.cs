@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace Docknet.Models
 {
@@ -13,7 +14,7 @@ namespace Docknet.Models
             this.RepoTags = new List<string>();
             this.Layers = new List<string>();
 
-            this.RepoTags.Add(image.RepositoryTag.Replace(":SHA256", string.Empty));
+            this.RepoTags.Add(image.RepositoryTag.Replace(":SHA256", string.Empty, true, CultureInfo.InvariantCulture));
         }
     }
 }
