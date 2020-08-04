@@ -212,7 +212,7 @@ namespace Docknet.Services
         private async Task SaveRepositoriesFileAsync(Image image, string tempImageDir, string lastLayerId)
         {
             var repositoriesJson = "{\"{{image}}\": {\"{{tag}}\": \"{{lastLayerId}}\"}}"
-                                    .Replace("{{image}}", image.RepositoryTag)
+                                    .Replace("{{image}}", image.RepositoryTag.Replace(":" + image.Tag, string.Empty))
                                     .Replace("{{tag}}", image.Tag)
                                     .Replace("{{lastLayerId}}", lastLayerId);
 
